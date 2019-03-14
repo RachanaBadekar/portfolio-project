@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Rachana Badekar</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+
+
+    <style>
+      .progress-bar{
+          float: right;
+      }
+      .bgimg {
+        background-color: #001010;
+      }
+      .bgimg1 {
+        background-color: #001010;
+      }
+      body {
+        background-image: url("{% static 'newblack.jpg' %}");
+        background-attachment: fixed;
+        background-size: cover;
+        content: "";
+        display: block;
+        left: 0;
+        z-index: -1;
+
+      }
+      .jumbotron{
+        background: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      #progress {
+        width:60px;
+      }
+      #dp {
+        margin-left: 590px;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <!--<link href="album.css" rel="stylesheet">-->
+  </head>
+  <body>
+<main role="main">
+    <section class="jumbotron text-center">
+        <h1 class="jumbotron-heading text-center"><font color="white">Rachana Badekar</font></h1>
+        <font color="white"><p style="font-size:25px">Software Engineer</style></p></font>
+        <p class="lead text-muted"><b><font color="white">Hi I'm Rachana! Welcome to my website.<br>
+          Browse my site to see all that I have to offer.</br>
+        </font></b></p>
+        <p>
+          <a href="mailto:rachnabadekar@gmail.com" class="btn btn-primary my-2">Email Me</a>
+          <a href="https://www.linkedin.com/in/rachana-badekar/" class="btn btn-secondary my-2">Linkedin</a>
+        </p>
+      </div>
+  </div>
+</section>
+
+
+<img src="{% static 'r.png' %}" height="300" id = "dp">  </img>
+
+
+  <div class="album py-5">
+
+
+    <div class="bgimg1">
+    <div class="container">
+      <h1 class="jumbotron-heading text-center"><font color="white">My Work</font></h1>
+
+
+      <div class="row">
+        {% for job in jobs.all %}
+        <div class="col-md-4 mt-5">
+          <a href="{% url 'detail' job.id %}">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ job.image.url }}" ></img>
+            <div class="card-body">
+              <p class="card-text">{{ job.title}}</p>
+                <div class="btn-group">
+                </div>
+              </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+<div class=" mt-5 bgimg">
+    <div class = "container" id="skills">
+      <h1 class="jumbotron-heading text-center"><font color="white">Skills</font></h1>
+      <div class = "row justify-content-around align-items-center">
+        <div class="col">
+        <img src="{% static 'python.png' %}" height=100px ></img>
+        </div>
+        <div class="col">
+        <img src="{% static 'java.jpg' %}" style="height:100px;" ></img>
+        </div>
+        <div class="col">
+        <img src="{% static 'django.PNG' %}" height=150px ></img>
+        </div>
+        </div>
+        <div class = "row mt-2 justify-content-around align-items-center">
+          <div class="col">
+            <img src="{% static 'bootstrap.png' %}" height="150px" ></img>
+          </div>
+          <div class="col">
+          <img src="{% static 'css3img.png' %}" style="height:100px;" ></img>
+          </div>
+          <div class="col">
+          <img src="{% static 'postgresql_logo.png' %}" height="150px" ></img>
+          </div>
+          </div>
+          <div class = "row mt-2 justify-content-around align-items-center">
+          <div class="col">
+          <img src="{% static 'c-++-logo.jpg' %}" height=100px ></img>
+          </div>
+          <div class="col mb-5">
+          <img src="{% static 'javas.jpg' %}" height=150px ></img>
+          </div>
+          <div class="col">
+          <img src="{% static 'mysql.png' %}" height=150px ></img>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</main>
+
+<script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
